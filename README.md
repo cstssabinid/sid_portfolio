@@ -15,7 +15,8 @@ A dark, responsive personal portfolio for Sabin IZERE DUKUZUMUKIZA. The site pre
 
 ## Technology
 
-- Next.js-compatible App Router powered by Vinext
+- Next.js 16 App Router for the primary Vercel deployment
+- Vinext and Cloudflare Workers compatibility for OpenAI Sites
 - React 19 and TypeScript
 - Tailwind CSS 4 and custom CSS design tokens
 - shadcn primitives backed by Base UI
@@ -104,7 +105,7 @@ Import the GitHub repository in Vercel and keep the repository’s standard buil
 
 ### OpenAI Sites
 
-The repository is also configured for Sites through `.openai/hosting.json`. The build emits Cloudflare Workers-compatible output for versioned deployment.
+The repository is also configured for Sites through `.openai/hosting.json`. Run `npm run sites:build` to emit Cloudflare Workers-compatible output for versioned deployment.
 
 ## Contact form configuration
 
