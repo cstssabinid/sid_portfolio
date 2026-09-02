@@ -507,6 +507,7 @@ textarea:focus-visible {
 .profile-frame::before {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background-image: linear-gradient(
     135deg,
     transparent 40%,
@@ -517,9 +518,29 @@ textarea:focus-visible {
   content: '';
 }
 
+.profile-frame::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgb(7 17 31 / 5%) 35%,
+    rgb(7 17 31 / 82%) 100%
+  );
+  content: '';
+  pointer-events: none;
+}
+
+.profile-photo {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center 48%;
+  filter: grayscale(1) contrast(1.06);
+}
+
 .profile-label {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   align-self: flex-start;
   border: 1px solid rgb(255 255 255 / 12%);
   border-radius: 999px;
@@ -545,7 +566,7 @@ textarea:focus-visible {
 
 .profile-meta {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -712,6 +733,67 @@ textarea:focus-visible {
 
 .focus-list svg {
   width: 0.85rem;
+}
+
+.about-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.about-meta-card {
+  display: flex;
+  min-width: 0;
+  gap: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: rgb(7 17 31 / 40%);
+  padding: 1rem;
+}
+
+.about-meta-icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  place-items: center;
+  border-radius: 0.55rem;
+  background: rgb(77 163 255 / 10%);
+  color: var(--accent-bright);
+}
+
+.about-meta-icon svg {
+  width: 1rem;
+}
+
+.about-meta-card p,
+.about-meta-card h3,
+.about-meta-card span {
+  margin: 0;
+}
+
+.about-meta-card p {
+  color: var(--accent-bright);
+  font-family: var(--font-geist-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.about-meta-card h3 {
+  margin-top: 0.35rem;
+  color: var(--text-main);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.about-meta-card span {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  line-height: 1.5;
 }
 
 .project-filters {
@@ -1112,6 +1194,13 @@ textarea:focus-visible {
   color: var(--text-soft);
   font-size: 0.94rem;
   line-height: 1.75;
+}
+
+.experience-location {
+  margin: 0.55rem 0 0;
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono);
+  font-size: 0.7rem;
 }
 
 .experience-columns {
@@ -1593,6 +1682,7 @@ textarea:focus-visible {
   }
 
   .focus-list,
+  .about-meta-grid,
   .skills-grid,
   .experience-links,
   .form-row {

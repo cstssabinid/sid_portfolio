@@ -9,6 +9,7 @@ A dark, responsive personal portfolio for Sabin IZERE DUKUZUMUKIZA. The site pre
 - Work experience featuring TRIUMVIRA Daily Report, Berwa Photo Hub, BERWA HOSPITALS, and SCFMP
 - Centralized content model for personal details, projects, skills, experience, and certificates
 - Contact form with native validation plus sending, success, and error states
+- Resume-backed profile photo, education, languages, experience, contact details, and downloadable CV
 - SEO metadata, Open Graph support, JSON-LD Person data, sitemap, robots, manifest, and favicon
 - Reduced-motion support, visible focus states, semantic landmarks, and a skip link
 - Custom 404 route and conditional support for social links and a downloadable CV
@@ -75,11 +76,11 @@ Edit `data/portfolio.ts` to change:
 
 Assets belong in:
 
-- profile photo: `public/images/profile/`
+- profile photo: `public/images/profile/sabin-izere-dukuzumukiza.jpg`
 - project screenshots: `public/images/projects/`
 - certificate thumbnails: `public/images/certificates/`
 - certificate PDFs: a public path of your choice, referenced by the certificate record
-- CV: `public/cv/CV.pdf`, then set `personalInfo.cvPath` to `/cv/CV.pdf`
+- CV: `public/cv/Sabin-IZERE-DUKUZUMUKIZA-Resume.pdf`
 
 The current profile treatment and project covers are intentional code-native placeholders. Add only images that belong to Sabin; do not reuse assets from the design reference.
 

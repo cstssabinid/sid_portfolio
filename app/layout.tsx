@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 const title = `${personalInfo.name} | Software Developer`;
 const description =
-  'Portfolio of Sabin IZERE DUKUZUMUKIZA, a software developer who builds practical digital systems for business, creative, healthcare, and agricultural workflows.';
+  'Portfolio of Sabin IZERE DUKUZUMUKIZA, a Rwandan software developer, photographer, photo retoucher, and QA tester.';
 const metadataBase = new URL(personalInfo.siteUrl);
 
 export const metadata: Metadata = {
@@ -89,12 +89,22 @@ export default function RootLayout({
               '@type': 'Person',
               name: personalInfo.name,
               url: personalInfo.siteUrl,
-              jobTitle: 'Software Developer',
+              image: new URL(personalInfo.profileImage, personalInfo.siteUrl),
+              jobTitle: 'Software Developer, Photographer and QA Tester',
+              telephone: personalInfo.phone,
+              address: personalInfo.location,
+              sameAs: [personalInfo.github, personalInfo.creativePortfolio],
+              alumniOf: {
+                '@type': 'CollegeOrUniversity',
+                name: 'University of Rwanda',
+              },
               knowsAbout: [
                 'Full-stack development',
                 'Web application development',
                 'System design',
-                'Responsive user interfaces',
+                'Quality assurance testing',
+                'Portrait photography',
+                'Photo retouching',
               ],
             }),
           }}

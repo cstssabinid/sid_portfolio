@@ -1,4 +1,5 @@
-import { ArrowDownRight, ArrowUpRight, FolderKanban } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Download, FolderKanban } from 'lucide-react';
+import Image from 'next/image';
 
 import { personalInfo, projects } from '@/data/portfolio';
 
@@ -25,6 +26,14 @@ export function HeroSection() {
               Start a conversation
               <ArrowUpRight aria-hidden="true" />
             </a>
+            <a
+              className="button-secondary"
+              href={personalInfo.cvPath}
+              download
+            >
+              Download resume
+              <Download aria-hidden="true" />
+            </a>
           </div>
           <dl className="hero-stats" aria-label="Portfolio highlights">
             <div>
@@ -46,18 +55,23 @@ export function HeroSection() {
 
         <div
           className="hero-visual"
-          aria-label="Sabin Izere DUKUZUMUKIZA profile placeholder"
+          aria-label="Portrait of Sabin IZERE DUKUZUMUKIZA"
         >
           <div className="visual-orbit visual-orbit-one" aria-hidden="true" />
           <div className="visual-orbit visual-orbit-two" aria-hidden="true" />
           <div className="profile-frame">
+            <Image
+              className="profile-photo"
+              src={personalInfo.profileImage}
+              alt="Sabin IZERE DUKUZUMUKIZA"
+              fill
+              sizes="(max-width: 800px) 310px, 370px"
+              priority
+            />
             <span className="profile-label">Profile</span>
-            <span className="profile-initials" aria-hidden="true">
-              {personalInfo.initials}
-            </span>
             <div className="profile-meta">
               <FolderKanban aria-hidden="true" />
-              <span>Building systems with purpose</span>
+              <span>Software · Photography · QA</span>
             </div>
           </div>
           <div className="availability-chip">

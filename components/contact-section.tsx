@@ -1,6 +1,15 @@
 'use client';
 
-import { ArrowUpRight, Mail, MapPin, Send } from 'lucide-react';
+import {
+  ArrowUpRight,
+  Camera,
+  Code2,
+  Download,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+} from 'lucide-react';
 import { useState } from 'react';
 
 import { SectionHeading } from '@/components/section-heading';
@@ -68,7 +77,7 @@ export function ContactSection() {
             id="contact-heading"
             eyebrow="Get in touch"
             title="Have a useful idea? Let’s make it real."
-            description="I’m open to thoughtful software projects, product collaborations, and conversations about building technology with practical value."
+            description="I’m available for software projects, website and app testing, photography, retouching, and practical digital support."
             align="left"
           />
           <div className="contact-details">
@@ -95,6 +104,54 @@ export function ContactSection() {
                 </span>
               </div>
             ) : null}
+            <a href={`tel:${personalInfo.phone}`}>
+              <span>
+                <Phone aria-hidden="true" />
+              </span>
+              <span>
+                <small>Phone</small>
+                {personalInfo.phone}
+              </span>
+              <ArrowUpRight aria-hidden="true" />
+            </a>
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>
+                <Code2 aria-hidden="true" />
+              </span>
+              <span>
+                <small>GitHub</small>
+                cstssabinid
+              </span>
+              <ArrowUpRight aria-hidden="true" />
+            </a>
+            <a
+              href={personalInfo.creativePortfolio}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>
+                <Camera aria-hidden="true" />
+              </span>
+              <span>
+                <small>Photography</small>
+                Berwa Photo Hub
+              </span>
+              <ArrowUpRight aria-hidden="true" />
+            </a>
+            <a href={personalInfo.cvPath} download>
+              <span>
+                <Download aria-hidden="true" />
+              </span>
+              <span>
+                <small>Resume</small>
+                Download PDF
+              </span>
+              <ArrowUpRight aria-hidden="true" />
+            </a>
           </div>
         </div>
 

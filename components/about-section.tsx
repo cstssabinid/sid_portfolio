@@ -1,7 +1,7 @@
-import { Check } from 'lucide-react';
+import { Check, GraduationCap, Languages } from 'lucide-react';
 
 import { SectionHeading } from '@/components/section-heading';
-import { personalInfo } from '@/data/portfolio';
+import { education, personalInfo } from '@/data/portfolio';
 
 export function AboutSection() {
   return (
@@ -32,6 +32,30 @@ export function AboutSection() {
               </li>
             ))}
           </ul>
+          <div className="about-meta-grid">
+            <article className="about-meta-card">
+              <span className="about-meta-icon">
+                <GraduationCap aria-hidden="true" />
+              </span>
+              <div>
+                <p>Education · {education.period}</p>
+                <h3>{education.qualification}</h3>
+                <span>
+                  {education.institution} · {education.location}
+                </span>
+              </div>
+            </article>
+            <article className="about-meta-card">
+              <span className="about-meta-icon">
+                <Languages aria-hidden="true" />
+              </span>
+              <div>
+                <p>Languages</p>
+                <h3>{personalInfo.languages.join(' · ')}</h3>
+                <span>Professional and client communication</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>

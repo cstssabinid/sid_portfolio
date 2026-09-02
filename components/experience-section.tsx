@@ -33,6 +33,9 @@ export function ExperienceSection() {
                   </div>
                   <span>{item.period}</span>
                 </div>
+                {item.location ? (
+                  <p className="experience-location">{item.location}</p>
+                ) : null}
                 <p className="experience-description">{item.description}</p>
                 <div className="experience-columns">
                   <div>
@@ -63,19 +66,21 @@ export function ExperienceSection() {
                     <li key={technology}>{technology}</li>
                   ))}
                 </ul>
-                <div className="experience-links">
-                  {item.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label}
-                      <ArrowUpRight aria-hidden="true" />
-                    </a>
-                  ))}
-                </div>
+                {item.links.length > 0 ? (
+                  <div className="experience-links">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                        <ArrowUpRight aria-hidden="true" />
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </div>
             </article>
           ))}
