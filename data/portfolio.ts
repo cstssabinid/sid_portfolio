@@ -308,4 +308,4 @@ export const navigation = [
   { label: 'Experience', href: '#experience' },
   { label: 'Certificates', href: '#certificates' },
   { label: 'Contact', href: '#contact' },
-];
+].filter(({ href }) => href !== '#certificates' || certificates.length > 0);
