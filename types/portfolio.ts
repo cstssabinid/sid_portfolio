@@ -4,7 +4,8 @@ export type ProjectCategory =
   | 'Business Systems'
   | 'Creative Platforms'
   | 'Health Technology'
-  | 'AgriTech';
+  | 'AgriTech'
+  | 'E-commerce';
 
 export interface Project {
   id: string;

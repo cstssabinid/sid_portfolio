@@ -118,6 +118,19 @@ export const projects: Project[] = [
     shortMark: 'BH',
   },
   {
+    id: 'shine-baba-shop',
+    title: 'Shine Baba Shop',
+    category: 'E-commerce',
+    description: 'A customer-facing online storefront for Shine Baba Shop.',
+    longDescription: 'An e-commerce website that brings Shine Baba Shop’s products and shopping experience to customers online.',
+    live: 'https://shinebabashop.com/',
+    technologies: ['E-commerce', 'Online storefront', 'Responsive web'],
+    features: ['Online product discovery', 'Customer shopping experience', 'Responsive storefront'],
+    role: 'Product design, full-stack development, and deployment',
+    status: 'Live',
+    accent: '#fb7185',
+    shortMark: 'SBS',
+  },  {
     id: 'scfmp',
     title: 'SCFMP',
     category: 'AgriTech',
@@ -197,14 +210,14 @@ export const experience: Experience[] = [
     organization: 'Independent product & client systems',
     period: 'Selected production work',
     description:
-      'Designed, built, and deployed four live web systems across hospitality operations, creative services, healthcare, and agricultural cooperative management.',
+      'Designed, built, and deployed five live web systems across hospitality operations, creative services, healthcare, and agricultural cooperative management.',
     responsibilities: [
       'Translated domain workflows into focused, responsive web experiences.',
       'Owned product implementation from interface decisions through production deployment.',
       'Created purpose-built solutions for distinctly different users and operational contexts.',
     ],
     achievements: [
-      'Delivered four independently accessible production systems.',
+      'Delivered five independently accessible production systems.',
       'Covered business reporting, studio booking, hospital information, and cooperative management use cases.',
     ],
     technologies: [
