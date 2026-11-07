@@ -57,11 +57,9 @@ Copy `.env.example` to `.env.local` and configure only the values you use:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://your-production-domain.example
-NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
 ```
 
 - `NEXT_PUBLIC_SITE_URL` controls canonical URLs, sitemap output, and structured data. Leave it unset during local development.
-- `NEXT_PUBLIC_FORMSPREE_ENDPOINT` enables the contact form. Without it, the form displays a clear configuration message and sends nothing.
 - Never commit `.env.local` or a secret API key.
 
 ## Customize the portfolio
@@ -108,11 +106,6 @@ Import the GitHub repository in Vercel and keep the repository’s standard buil
 
 The repository is also configured for Sites through `.openai/hosting.json`. Run `npm run sites:build` to emit Cloudflare Workers-compatible output for versioned deployment.
 
-## Contact form configuration
+## Contact form
 
-1. Create a Formspree form for the destination email address.
-2. Add the full endpoint as `NEXT_PUBLIC_FORMSPREE_ENDPOINT` locally and in the hosting environment.
-3. Redeploy the site.
-4. Submit one non-sensitive test message and confirm receipt.
-
-Until this variable is configured, the contact form intentionally remains in a safe, non-sending state.
+The contact form sends messages through FormSubmit. Its AJAX recipient endpoint is set in `components/contact-section.tsx`. The first submission triggers an activation email; confirm the form from that email to release pending messages to the inbox.

@@ -39,29 +39,36 @@ export function ContactSection() {
     setStatus('sending');
     setMessage('');
 
-    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
-    if (!endpoint) {
-      setStatus('error');
-      setMessage(
-        'The contact endpoint is not configured yet. Please use a direct contact channel once one is listed.',
-      );
-      return;
-    }
-
     const form = event.currentTarget;
     try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      });
+      const payload = Object.fromEntries(
+        new FormData(form).entries(),
+      ) as Record<string, string>;
+      payload._subject = `Portfolio message: ${payload.subject}`;
+      payload._template = 'table';
+
+      const response = await fetch(
+        'https://formsubmit.co/ajax/sabinloyal04@gmail.com',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        },
+      );
       if (!response.ok) throw new Error('Contact request failed');
+      const result = (await response.json()) as { success?: boolean | string };
+      if (result.success === false) throw new Error('Contact request failed');
       form.reset();
       setStatus('success');
       setMessage('Thank you. Your message has been sent successfully.');
     } catch {
       setStatus('error');
-      setMessage('Your message could not be sent. Please try again shortly.');
+      setMessage(
+        'Your message could not be sent. Please try again or contact me by phone.',
+      );
     }
   }
 
@@ -156,6 +163,14 @@ export function ContactSection() {
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="_honey"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            hidden
+          />
           <div className="form-heading">
             <span>New message</span>
             <span aria-hidden="true" />
