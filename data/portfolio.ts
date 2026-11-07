@@ -130,7 +130,29 @@ export const projects: Project[] = [
     status: 'Live',
     accent: '#fb7185',
     shortMark: 'SBS',
-  },  {
+  },
+  {
+    id: 'agribridge',
+    title: 'AgriBridge',
+    category: 'AgriTech',
+    description:
+      'A digital management platform for agricultural organizations, cooperatives, and farmers.',
+    longDescription:
+      'Developed by SmartBridge Technologies Ltd, AgriBridge brings organization management, farmer records, production, reporting, and operational workflows together in one connected platform.',
+    live: 'https://agribridge.cloud/',
+    technologies: ['AgriTech platform', 'Farmer management', 'Organization workflows'],
+    features: [
+      'Agricultural organization and cooperative management',
+      'Farmer and member records',
+      'Production and operational reporting',
+      'Connected digital workflows',
+    ],
+    role: 'IT leadership, product development, and platform delivery',
+    status: 'Live',
+    accent: '#4ade80',
+    shortMark: 'AB',
+  },
+  {
     id: 'scfmp',
     title: 'SCFMP',
     category: 'AgriTech',
@@ -206,19 +228,42 @@ export const skillGroups: SkillGroup[] = [
 
 export const experience: Experience[] = [
   {
+    role: 'IT Lead',
+    organization: 'SmartBridge Technologies Ltd',
+    period: 'Current',
+    description:
+      'Leading IT work at SmartBridge Technologies Ltd and building AgriBridge, the company’s digital management platform for agricultural organizations and farmers.',
+    responsibilities: [
+      'Lead the company’s IT and technology initiatives.',
+      'Guide the development and ongoing delivery of the AgriBridge platform.',
+      'Build practical digital workflows for agricultural organizations and cooperatives.',
+    ],
+    achievements: [
+      'Built and launched AgriBridge as a live production platform.',
+      'Connected organization, farmer, production, and reporting workflows in one system.',
+    ],
+    technologies: [
+      'IT leadership',
+      'AgriTech',
+      'Platform development',
+      'Production delivery',
+    ],
+    links: [{ label: 'AgriBridge', href: 'https://agribridge.cloud/' }],
+  },
+  {
     role: 'Full-Stack Systems Developer',
     organization: 'Independent product & client systems',
     period: 'Selected production work',
     description:
-      'Designed, built, and deployed five live web systems across hospitality operations, creative services, healthcare, and agricultural cooperative management.',
+      'Designed, built, and deployed six live web systems across hospitality, creative services, healthcare, e-commerce, and agricultural management.',
     responsibilities: [
       'Translated domain workflows into focused, responsive web experiences.',
       'Owned product implementation from interface decisions through production deployment.',
       'Created purpose-built solutions for distinctly different users and operational contexts.',
     ],
     achievements: [
-      'Delivered five independently accessible production systems.',
-      'Covered business reporting, studio booking, hospital information, and cooperative management use cases.',
+      'Delivered six independently accessible production systems.',
+      'Covered business reporting, studio booking, hospital information, e-commerce, and agricultural organization management.',
     ],
     technologies: [
       'Full-stack development',

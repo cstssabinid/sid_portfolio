@@ -42,7 +42,7 @@ export function ProjectsSection() {
           id="projects-heading"
           eyebrow="Selected work"
           title="Live systems, built for real use."
-          description="Five production products across distinct industries—each designed, developed, and brought online with a clear operational purpose."
+          description="Six production products across distinct industries—each designed, developed, and brought online with a clear operational purpose."
         />
 
         <div
